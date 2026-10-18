@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="de" data-lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Welcome to our Parent association’s info page</title>
+<meta name="description" content="Förderverein der Kita Hopsekäse e.V., Berlin. Mitglied werden, spenden, mitmachen. Deutsch, English.">
+<style>
+:root{
+  --cheese:#F2B632; --cheese-deep:#D99A0B; --leaf:#2F5D3A; --ink:#22303A;
+  --paper:#FFFDF6; --sky:#E3EFF3; --line:#E6DFC9;
+  --head:"Avenir Next Rounded","Nunito",ui-rounded,"Trebuchet MS",system-ui,sans-serif;
+  --body:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font:1.0625rem/1.65 var(--body);color:var(--ink);background:var(--paper)}
+body [lang]{display:revert}
+html[data-lang="de"] body [lang="en"],
+html[data-lang="en"] body [lang="de"]{display:none}
+a{color:var(--leaf)}
+:focus-visible{outline:3px solid var(--leaf);outline-offset:3px}
+.wrap{max-width:46rem;margin:0 auto;padding:0 1.25rem}
+header.bar{background:var(--sky);border-bottom:1px solid var(--line)}
+header.bar .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:.6rem;padding-bottom:.6rem;gap:1rem}
+.brand{font:700 1rem var(--head)}
+.langs{display:flex;gap:.35rem}
+.langs button{font:600 .9rem var(--head);border:2px solid var(--leaf);background:transparent;color:var(--leaf);border-radius:2rem;padding:.25rem .8rem;cursor:pointer}
+.langs button[aria-pressed="true"]{background:var(--leaf);color:#fff}
+
+/* The one memorable thing: the cheese block */
+.hero{padding:2.5rem 0}
+.cheese{
+  background:
+    radial-gradient(circle at 12% 28%,var(--paper) 0 1.6rem,transparent 1.7rem),
+    radial-gradient(circle at 88% 20%,var(--paper) 0 1.1rem,transparent 1.2rem),
+    radial-gradient(circle at 78% 82%,var(--paper) 0 2.1rem,transparent 2.2rem),
+    radial-gradient(circle at 20% 86%,var(--paper) 0 .8rem,transparent .9rem),
+    var(--cheese);
+  border-radius:1.5rem 1.5rem 1.5rem .5rem;padding:3rem 2rem;box-shadow:0 .5rem 0 var(--cheese-deep)}
+.cheese h1{font:800 clamp(1.9rem,6vw,2.9rem)/1.12 var(--head);margin:0 0 .75rem;max-width:20ch}
+.cheese p{margin:0;max-width:34ch;font-size:1.15rem}
+.cheese .name{font:700 1rem var(--head);margin-bottom:1rem}
+
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin:1.5rem 0 0}
+.gallery figure{margin:0;background:var(--sky);border-radius:1rem;overflow:hidden}
+.gallery svg{display:block;width:100%;height:auto}
+.gallery figcaption{font:600 .95rem var(--head);padding:.6rem .9rem .8rem}
+@media (max-width:36rem){.gallery{grid-template-columns:1fr}}
+section{padding:1.75rem 0;border-top:1px solid var(--line)}
+section:first-of-type{border-top:0}
+h2{font:800 1.6rem/1.2 var(--head);margin:0 0 .75rem}
+p{margin:.6rem 0;max-width:62ch}
+.btns{display:flex;flex-wrap:wrap;gap:.75rem;margin:1.1rem 0}
+.btn{display:inline-block;font:700 1rem var(--head);text-decoration:none;background:var(--leaf);color:#fff;padding:.75rem 1.3rem;border-radius:.8rem}
+.btn.alt{background:transparent;color:var(--leaf);border:2px solid var(--leaf)}
+ol.steps{padding-left:1.3rem;max-width:62ch}
+ol.steps li{margin:.5rem 0}
+.iban{background:var(--sky);border-radius:1rem;padding:1.1rem 1.25rem;margin:1rem 0}
+.iban code{display:block;font:700 1.15rem/1.4 ui-monospace,Menlo,Consolas,monospace;letter-spacing:.03em;margin:.3rem 0 .6rem;overflow-wrap:anywhere}
+.iban button{font:600 .9rem var(--head);border:2px solid var(--leaf);background:#fff;color:var(--leaf);border-radius:.6rem;padding:.3rem .8rem;cursor:pointer}
+.rules{list-style:none;padding:0;margin:1rem 0;max-width:62ch}
+.rules li{display:flex;gap:1rem;padding:.7rem 0;border-bottom:1px solid var(--line)}
+.rules strong{flex:0 0 7.5rem;font-family:var(--head)}
+.todo{background:#FFF3CC;border:2px dashed var(--cheese-deep);border-radius:.8rem;padding:.8rem 1rem;margin:1rem 0;font-size:.95rem}
+footer{background:var(--leaf);color:#fff;padding:1.5rem 0;margin-top:2rem;font-size:.95rem}
+footer a{color:#fff}
+footer p{max-width:none}
+@media (max-width:30rem){.rules li{flex-direction:column;gap:.1rem}.cheese{padding:2.25rem 1.25rem}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap">
+    <span class="brand">Kita Hopsekäse</span>
+    <div class="langs" role="group" aria-label="Sprache / Language">
+      <button data-set="de" aria-pressed="true">DE</button>
+      <button data-set="en" aria-pressed="false">EN</button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="hero">
+    <div class="cheese">
+      <div class="name">Förderverein der Kita Hopsekäse e.V.</div>
+      <h1 lang="de">Willkommen auf der Infoseite unseres Fördervereins</h1>
+      <h1 lang="en">Welcome to our Parent association’s info page</h1>
+    </div>
+  </div>
+
+  <section id="was">
+    <h2 lang="de">Was wir tun</h2>
+    <h2 lang="en">What we do</h2>
+    <p lang="de">Der Förderverein unterstützt die Kita Hopsekäse bei besonderen Projekten, Veranstaltungen und Anschaffungen, die über den regulären Rahmen hinausgehen. So bereichern wir den Kita-Alltag unserer Kinder: mit kreativen Materialien, neuen Spielgeräten, Ausflügen, besonderen Aktionen oder auch einfach zusätzlichen Hygieneartikeln.</p>
+    <p lang="en">The association supports Kita Hopsekäse with special projects, events and purchases that go beyond the regular budget. This is how we enrich our children’s daily life at the daycare: creative materials, new play equipment, outings, special activities, or simply extra hygiene supplies.</p>
+  <div class="gallery">
+    <figure>
+      <svg viewBox="0 0 200 150" role="img" aria-label="A little puppet theater with a hand puppet">
+        <rect x="0" y="125" width="200" height="25" fill="#7FAE72"/>
+        <rect x="45" y="30" width="110" height="95" rx="3" fill="#E4684F"/>
+        <rect x="62" y="54" width="76" height="44" fill="#F8D56B"/>
+        <path d="M62 54 L62 98 L78 98 Q70 76 80 54 Z M138 54 L138 98 L122 98 Q130 76 120 54 Z" fill="#2F5D3A"/>
+        <rect x="45" y="30" width="110" height="10" fill="#F2B632"/>
+        <g fill="#F2B632"><circle cx="56" cy="40" r="11"/><circle cx="78" cy="40" r="11"/><circle cx="100" cy="40" r="11"/><circle cx="122" cy="40" r="11"/><circle cx="144" cy="40" r="11"/></g>
+        <circle cx="100" cy="88" r="13" fill="#6FB1C9"/>
+        <polygon points="89,78 111,78 100,57" fill="#2F5D3A"/>
+        <circle cx="95" cy="86" r="2" fill="#22303A"/><circle cx="105" cy="86" r="2" fill="#22303A"/>
+        <path d="M95 92 Q100 96 105 92" stroke="#22303A" stroke-width="1.5" fill="none"/>
+        <rect x="58" y="98" width="84" height="8" rx="2" fill="#D99A0B"/>
+        <rect x="54" y="125" width="8" height="0" fill="none"/>
+      </svg>
+      <figcaption><span lang="de">Besondere Aktionen</span><span lang="en">Special activities</span></figcaption>
+    </figure>
+    <figure>
+      <svg viewBox="0 0 200 150" role="img" aria-label="Stacked wooden toy blocks and a ball">
+        <rect x="0" y="125" width="200" height="25" fill="#7FAE72"/>
+        <rect x="30" y="85" width="44" height="42" rx="3" fill="#2F5D3A"/>
+        <rect x="78" y="85" width="44" height="42" rx="3" fill="#6FB1C9"/>
+        <rect x="54" y="43" width="44" height="42" rx="3" fill="#E4684F"/>
+        <polygon points="54,43 98,43 76,14" fill="#F2B632"/>
+        <circle cx="76" cy="64" r="9" fill="#FFFDF6"/>
+        <circle cx="156" cy="104" r="22" fill="#F2B632"/>
+        <path d="M136 96 Q156 108 176 96 M138 116 Q156 104 174 116" stroke="#D99A0B" stroke-width="3" fill="none"/>
+      </svg>
+      <figcaption><span lang="de">Material und Ausstattung</span><span lang="en">Material and equipment</span></figcaption>
+    </figure>
+    <figure>
+      <svg viewBox="0 0 200 150" role="img" aria-label="Playground with a slide, a swing and the sun">
+        <circle cx="38" cy="28" r="14" fill="#F2B632"/>
+        <rect x="0" y="125" width="200" height="25" fill="#7FAE72"/>
+        <rect x="30" y="52" width="34" height="6" rx="2" fill="#2F5D3A"/>
+        <rect x="32" y="58" width="4" height="68" fill="#2F5D3A"/><rect x="58" y="58" width="4" height="68" fill="#2F5D3A"/>
+        <path d="M64 55 Q115 66 146 122" stroke="#E4684F" stroke-width="9" fill="none" stroke-linecap="round"/>
+        <path d="M152 125 L172 40 L192 125" stroke="#2F5D3A" stroke-width="4" fill="none" stroke-linejoin="round"/>
+        <line x1="158" y1="40" x2="186" y2="40" stroke="#2F5D3A" stroke-width="5" stroke-linecap="round"/>
+        <line x1="165" y1="40" x2="165" y2="96" stroke="#22303A" stroke-width="1.5"/><line x1="179" y1="40" x2="179" y2="96" stroke="#22303A" stroke-width="1.5"/>
+        <rect x="161" y="96" width="22" height="5" rx="2" fill="#F2B632"/>
+      </svg>
+      <figcaption><span lang="de">Spielplatz draußen</span><span lang="en">Outdoor playground</span></figcaption>
+    </figure>
+  </div>
+  </section>
+
+  <section id="mitglied">
+    <h2 lang="de">Mitglied werden</h2>
+    <h2 lang="en">Become a member</h2>
+    <p lang="de">Schon ab 1 Euro im Monat (mindestens 12 Euro pro Jahr) hilfst du mit. Beiträge und Spenden kannst du steuerlich geltend machen.</p>
+    <p lang="en">You can join from just 1 euro a month (minimum 12 euros per year). Membership fees and donations can be claimed for tax purposes.</p>
+
+    <ol class="steps" lang="de">
+      <li>Mitgliedsantrag online ausfüllen oder das SEPA-Lastschriftmandat als PDF herunterladen.</li>
+      <li>Das ausgefüllte Mandat ins Fach deines Kindes legen oder direkt dem Vorstand geben.</li>
+      <li>Du kommst in unseren E-Mail-Verteiler und wirst regelmäßig über unsere Aktivitäten informiert.</li>
+    </ol>
+    <ol class="steps" lang="en">
+      <li>Fill in the membership form online, or download the SEPA direct debit mandate as a PDF.</li>
+      <li>Put the signed mandate in your child’s pigeonhole at the daycare, or give it directly to the board.</li>
+      <li>You join our mailing list and get regular news about what we are doing.</li>
+    </ol>
+
+    <div class="btns">
+      <a class="btn" href="ONLINE-FORMULAR-LINK-HIER">
+        <span lang="de">Online anmelden</span><span lang="en">Sign up online</span>
+      </a>
+      <a class="btn alt" href="sepa-mandat.pdf">
+        <span lang="de">SEPA-Mandat (PDF)</span><span lang="en">SEPA mandate (PDF)</span>
+      </a>
+    </div>
+  </section>
+
+  <section id="spenden">
+    <h2 lang="de">Einmal spenden</h2>
+    <h2 lang="en">Make a one-off donation</h2>
+    <p lang="de">Du willst dich nicht gleich binden? Auch Einzelspenden helfen und kommen direkt unseren Kindern zugute.</p>
+    <p lang="en">Not ready to commit? One-off donations help too and go straight to our children.</p>
+    <div class="iban">
+      <div><strong>Förderverein der Kita Hopsekäse e.V.</strong></div>
+      <code id="iban">DE93 4306 0967 1359 8953 00</code>
+      <div>
+        <span lang="de">Verwendungszweck: Spende</span><span lang="en">Reference: Spende</span>
+      </div>
+      <p style="margin-bottom:0"><button type="button" id="copy">
+        <span lang="de">IBAN kopieren</span><span lang="en">Copy IBAN</span>
+      </button></p>
+    </div>
+  </section>
+
+  <section id="geld">
+    <h2 lang="de">Wofür das Geld verwendet wird</h2>
+    <h2 lang="en">Where the money goes</h2>
+    <p lang="de">Der Vorstand entscheidet über die Verwendung der Mittel. Er ist dabei an die Beschlüsse der Mitgliederversammlung gebunden. So läuft das je nach Betrag:</p>
+    <p lang="en">The board decides how the funds are used, and it is bound by the decisions of the members’ meeting. Here is how it works, depending on the amount:</p>
+
+    <ul class="rules" lang="de">
+      <li><strong>bis 50 €</strong><span>Vorsitzende/r gemeinsam mit dem/der Kassierer/in</span></li>
+      <li><strong>50 bis 500 €</strong><span>der Vorstand, mit einfacher Mehrheit</span></li>
+      <li><strong>über 500 €</strong><span>die Mitgliederversammlung, auf Vorschlag des Vorstands</span></li>
+    </ul>
+    <ul class="rules" lang="en">
+      <li><strong>up to €50</strong><span>the chair together with the treasurer</span></li>
+      <li><strong>€50 to €500</strong><span>the board, by simple majority</span></li>
+      <li><strong>over €500</strong><span>the members’ meeting, on the board’s proposal</span></li>
+    </ul>
+
+    <p lang="de">Einmal im Jahr legt der Vorstand der Mitgliederversammlung einen Tätigkeitsbericht und die Jahresabrechnung vor. Ein Kassenprüfer kontrolliert die Belege und die Mittelverwendung. Die Vorstandsarbeit ist ehrenamtlich.</p>
+    <p lang="en">Once a year, the board presents an activity report and the annual accounts to the members. An independent cash auditor checks the receipts and how the money was used. Board work is voluntary and unpaid.</p>
+
+    <div class="todo">
+      [ENTWURF / DRAFT / BROUILLON] Hier Jahresbericht einfügen: gesammelter Betrag und Ausgaben (Feste, Material, Ausflüge). Erst nach Freigabe durch den Vorstand.
+    </div>
+  </section>
+
+  <section id="kontakt">
+    <h2 lang="de">Kontakt</h2>
+    <h2 lang="en">Contact</h2>
+    <p lang="de">Bei Fragen oder Anliegen stehen wir dir gern zur Verfügung. Du kannst uns auch tatkräftig unterstützen, zum Beispiel bei Veranstaltungen oder bei der Mitglieder- und Spendenwerbung.</p>
+    <p lang="en">If you have any questions, we are happy to help. You can also lend a hand, for example at events or by helping us find new members and donors.</p>
+    <p>Förderverein der Kita Hopsekäse e.V.<br>Scharnweberstr. 60, 10247 Berlin<br>E-Mail: <a href="mailto:EMAIL-HIER">EMAIL-HIER</a></p>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Förderverein der Kita Hopsekäse e.V. &middot; Berlin</p>
+    <p><a href="datenschutz.html">Datenschutz</a> &middot; <a href="impressum.html">Impressum</a></p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var html=document.documentElement, btns=document.querySelectorAll('[data-set]');
+  function setLang(l){
+    html.setAttribute('data-lang',l); html.setAttribute('lang',l);
+    btns.forEach(function(b){b.setAttribute('aria-pressed',b.dataset.set===l)});
+    try{localStorage.setItem('lang',l)}catch(e){}
+  }
+  btns.forEach(function(b){b.addEventListener('click',function(){setLang(b.dataset.set)})});
+  var saved=null; try{saved=localStorage.getItem('lang')}catch(e){}
+  var nav=(navigator.language||'de').slice(0,2);
+  setLang(saved||(['de','en'].indexOf(nav)>-1?nav:'en'));
+  var c=document.getElementById('copy');
+  c.addEventListener('click',function(){
+    var t=document.getElementById('iban').textContent;
+    if(navigator.clipboard){navigator.clipboard.writeText(t)}
+    var old=c.innerHTML; c.textContent='OK'; setTimeout(function(){c.innerHTML=old},1500);
+  });
+})();
+</script>
+</body>
+</html>
